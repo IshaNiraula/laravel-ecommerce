@@ -51,11 +51,6 @@
                             </button>
                         </li>
 
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="colors-tab" data-bs-toggle="tab" data-bs-target="#colors-tab-pane" type="button" role="tab">
-                                Product Color
-                            </button>
-                        </li>
                     </ul>
 
                     <div class="tab-content" id="myTabContent">

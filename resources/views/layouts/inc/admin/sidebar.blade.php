@@ -71,13 +71,7 @@
             </a>
         </li>
 
-        <li class="nav-item {{ Request::is('admin/colors') ? 'active' : '' }}">
-            <a class="nav-link" href="{{ url('admin/colors') }}">
-                <i class="mdi mdi-color-helper menu-icon"></i>
-                <span class="menu-title">Colors</span>
-            </a>
-        </li>
-
+      
         <li class="nav-item {{ Request::is('admin/users*') ? 'active' : '' }}">
             <a class="nav-link" data-bs-toggle="collapse" href="#auth"
                 aria-expanded="{{ Request::is('admin/users') ? 'true' : 'false' }}">

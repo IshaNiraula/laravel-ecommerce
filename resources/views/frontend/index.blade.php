@@ -1,7 +1,5 @@
 @extends('layouts.app')
-
 @section('title', 'Home')
-
 @section('content')
 
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
@@ -47,12 +45,16 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8 text-center">
-                    <h4>Welcome To EShop</h4>
+                    <h4>Welcome To MYStore</h4>
                     <div class="underline mx-auto"></div>
                     <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                        and scrambled it to make a type specimen book.
+                        Hello and welcome to MYStore, the place to find the best clothing and accessories for every
+                        taste and occasion. We thoroughly check the quality of our goods, working only with reliable
+                        suppliers so that you only receive the best quality product.
+                        <br/>
+                        We at MYStore believe in high quality and exceptional customer service. But most importantly, we
+                        believe shopping is a right, not a luxury, so we strive to deliver the best products at the most
+                        affordable prices, and ship them to you regardless of where you are located.
                     </p>
                 </div>
             </div>
@@ -93,9 +95,15 @@
                                                 </a>
                                             </h5>
                                             <div>
-                                                <span class="selling-price">${{ $productItem->selling_price }}</span>
-                                                <span class="original-price">${{ $productItem->original_price }}</span>
+                                                <span class="selling-price">Rs. {{ $productItem->selling_price }}</span>
+                                                <span class="original-price">Rs. {{ $productItem->original_price }}</span>
                                             </div>
+                                            <div class="cart-btn">
+                                                <a href="{{ url('cart') }}" class="btn btn-slider cart">
+                                                    Add To Cart
+                                                </a>
+                                            </div>
+                                          
                                         </div>
                                     </div>
                                 </div>
@@ -149,8 +157,8 @@
                                                 </a>
                                             </h5>
                                             <div>
-                                                <span class="selling-price">${{ $productItem->selling_price }}</span>
-                                                <span class="original-price">${{ $productItem->original_price }}</span>
+                                                <span class="selling-price">Rs. {{ $productItem->selling_price }}</span>
+                                                <span class="original-price">Rs. {{ $productItem->original_price }}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -205,8 +213,8 @@
                                                 </a>
                                             </h5>
                                             <div>
-                                                <span class="selling-price">${{ $productItem->selling_price }}</span>
-                                                <span class="original-price">${{ $productItem->original_price }}</span>
+                                                <span class="selling-price">Rs. {{ $productItem->selling_price }}</span>
+                                                <span class="original-price">Rs. {{ $productItem->original_price }}</span>
                                             </div>
                                         </div>
                                     </div>

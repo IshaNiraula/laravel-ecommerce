@@ -107,7 +107,7 @@
     <div class="text-center">
         <h2>Thank you for your order! </h2>
         <p>
-            Thank you for purchasing with {{ $appSetting->website_name ?? 'EShop'}}
+            Thank you for purchasing with {{ $appSetting->website_name ?? 'MYStore'}}
             <br>
             Your order items and details are provided below.
         </p>
@@ -220,7 +220,7 @@
 
     <br>
     <p class="text-center">
-        Thank your for shopping with EShop
+        Thank your for shopping with MYStore.
     </p>
 
 </body>

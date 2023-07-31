@@ -108,13 +108,13 @@
         <thead>
             <tr>
                 <th width="50%" colspan="2">
-                    <h2 class="text-start">EShop</h2>
+                    <h2 class="text-start">MYStore</h2>
                 </th>
                 <th width="50%" colspan="2" class="text-end company-data">
                     <span>Invoice Id: {{ $order->id }}</span> <br>
                     <span>Date: {{ date('d / m/ Y')}}</span> <br>
                     <span>Zip code : 560077</span> <br>
-                    <span>Address: 555, Main road, shivaji nagar, Bangalore, India</span> <br>
+                    <span>Address: Koteshwor, Kathmandu</span> <br>
                 </th>
             </tr>
             <tr class="bg-blue">
@@ -193,10 +193,10 @@
                             @endif
                         @endif
                     </td>
-                    <td width="10%">${{ $orderItem->price }}</td>
+                    <td width="10%">Rs. {{ $orderItem->price }}</td>
                     <td width="10%">{{ $orderItem->quantity }}</td>
                     <td width="15%" class="fw-bold">
-                        ${{ $orderItem->quantity * $orderItem->price }}</td>
+                        Rs. {{ $orderItem->quantity * $orderItem->price }}</td>
                     @php
                         $totalPrice += $orderItem->quantity * $orderItem->price;
                     @endphp
@@ -204,14 +204,14 @@
             @endforeach
             <tr>
                 <td colspan="4" class="fw-bold">Total Amount : </td>
-                <td colspan="1" class="fw-bold">${{ $totalPrice }}</td>
+                <td colspan="1" class="fw-bold">Rs. {{ $totalPrice }}</td>
             </tr>
         </tbody>
     </table>
 
     <br>
     <p class="text-center">
-        Thank your for shopping with EShop
+        Thank your for shopping with MYStore.
     </p>
 
 </body>
