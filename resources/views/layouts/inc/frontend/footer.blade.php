@@ -24,7 +24,6 @@
                     <div class="footer-underline"></div>
                     <div class="mb-2"><a href="{{ url('/') }}" class="text-white">Home</a></div>
                     <div class="mb-2"><a href="{{ url('/collections') }}" class="text-white">Collections</a></div>
-                    <div class="mb-2"><a href="{{ url('/') }}" class="text-white">Trending Products</a></div>
                     <div class="mb-2"><a href="{{ url('new-arrivals') }}" class="text-white">New Arrivals Products</a>
                     </div>
                     <div class="mb-2"><a href="{{ url('featured-products') }}" class="text-white">Featured

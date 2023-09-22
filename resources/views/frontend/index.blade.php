@@ -98,11 +98,6 @@
                                                 <span class="selling-price">Rs. {{ $productItem->selling_price }}</span>
                                                 <span class="original-price">Rs. {{ $productItem->original_price }}</span>
                                             </div>
-                                            <div class="cart-btn">
-                                                <a href="{{ url('cart') }}" class="btn btn-slider cart">
-                                                    Add To Cart
-                                                </a>
-                                            </div>
                                           
                                         </div>
                                     </div>

@@ -101,8 +101,8 @@
                                                     aria-labelledby="onlinePayment-tab" tabindex="0">
                                                     <h6>Online Payment Mode</h6>
                                                     <hr />
-                                                    <button type="button" wire:loading.attr="disabled" class="btn btn-warning">Pay Now (Online
-                                                        Payment)</button>
+                                                   <a href="https://esewa.com.np/#/home" target="#"> <button type="button" wire:loading.attr="disabled" class="btn btn-warning">Pay Now (Online
+                                                        Payment)</button></a>
                                                 </div>
                                             </div>
                                         </div>
