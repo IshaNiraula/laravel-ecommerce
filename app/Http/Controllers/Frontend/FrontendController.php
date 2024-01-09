@@ -16,6 +16,7 @@ class FrontendController extends Controller
     public function index()
     {
         if (Auth::check()) {
+            $test = "test";
             $userId = Auth::user()->id;
             $lastOrderedItem = Order::where('user_id', $userId)
                 ->orderBy('created_at', 'desc')
