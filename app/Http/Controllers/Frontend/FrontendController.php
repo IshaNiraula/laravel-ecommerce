@@ -20,7 +20,7 @@ class FrontendController extends Controller
             $lastOrderedItem = Order::where('user_id', $userId)
                 ->orderBy('created_at', 'desc')
                 ->first();
-            $orderId = $lastOrderedItem->id;
+                $orderId = $lastOrderedItem ? $lastOrderedItem->id : null;
             if ($orderId) {
                 $orderItem = OrderItem::where('order_id', $orderId)->orderBy('created_at', 'desc')->first();
                 $product = Product::find($orderItem->product_id);
@@ -29,14 +29,20 @@ class FrontendController extends Controller
         } else {
             $lastOrderedItem = null;
         }
+    
+        // Check if $personalizedProduct is undefined and set it as an empty array
+        if (!isset($personalizedProduct)) {
+            $personalizedProduct = [];
+        }
+    
         $sliders = Slider::where('status', '0')->get();
         $trendingProducts = Product::where('trending', '1')->latest()->take(15)->get();
         $newArrivalProducts = Product::latest()->take(14)->get();
         $featuredProducts = Product::where('featured', '1')->latest()->take(14)->get();
-
+    
         return view('frontend.index', compact('sliders', 'trendingProducts', 'newArrivalProducts', 'featuredProducts', 'personalizedProduct'));
     }
-
+    
     public function searchProducts(Request $request)
     {
         if ($request->search) {
