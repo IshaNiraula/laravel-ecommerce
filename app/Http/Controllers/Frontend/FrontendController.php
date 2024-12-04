@@ -20,12 +20,12 @@ class FrontendController extends Controller
             $lastOrderedItem = Order::where('user_id', $userId)
                 ->orderBy('created_at', 'desc')
                 ->first();
-            $orderId = $lastOrderedItem->id;
-            if ($orderId) {
-                $orderItem = OrderItem::where('order_id', $orderId)->orderBy('created_at', 'desc')->first();
-                $product = Product::find($orderItem->product_id);
-                $personalizedProduct = Product::where('category_id', $product->category_id)->orderBy('created_at', 'desc')->get();
-            }
+            // $orderId = $lastOrderedItem->id;
+            // if ($orderId) {
+            //     $orderItem = OrderItem::where('order_id', $orderId)->orderBy('created_at', 'desc')->first();
+            //     $product = Product::find($orderItem->product_id);
+            //     $personalizedProduct = Product::where('category_id', $product->category_id)->orderBy('created_at', 'desc')->get();
+            // }
         } else {
             $lastOrderedItem = null;
         }
@@ -33,6 +33,7 @@ class FrontendController extends Controller
         $trendingProducts = Product::where('trending', '1')->latest()->take(15)->get();
         $newArrivalProducts = Product::latest()->take(14)->get();
         $featuredProducts = Product::where('featured', '1')->latest()->take(14)->get();
+        $personalizedProduct = Product::get();
 
         return view('frontend.index', compact('sliders', 'trendingProducts', 'newArrivalProducts', 'featuredProducts', 'personalizedProduct'));
     }
