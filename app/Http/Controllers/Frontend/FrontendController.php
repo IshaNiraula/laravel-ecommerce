@@ -16,19 +16,26 @@ class FrontendController extends Controller
     public function index()
     {
         if (Auth::check()) {
+            $test = "test";
             $userId = Auth::user()->id;
             $lastOrderedItem = Order::where('user_id', $userId)
                 ->orderBy('created_at', 'desc')
                 ->first();
-            // $orderId = $lastOrderedItem->id;
-            // if ($orderId) {
-            //     $orderItem = OrderItem::where('order_id', $orderId)->orderBy('created_at', 'desc')->first();
-            //     $product = Product::find($orderItem->product_id);
-            //     $personalizedProduct = Product::where('category_id', $product->category_id)->orderBy('created_at', 'desc')->get();
-            // }
+            $orderId = $lastOrderedItem->id;
+            if ($orderId) {
+                $orderItem = OrderItem::where('order_id', $orderId)->orderBy('created_at', 'desc')->first();
+                $product = Product::find($orderItem->product_id);
+                $personalizedProduct = Product::where('category_id', $product->category_id)->orderBy('created_at', 'desc')->get();
+            }
         } else {
             $lastOrderedItem = null;
         }
+    
+        // Check if $personalizedProduct is undefined and set it as an empty array
+        if (!isset($personalizedProduct)) {
+            $personalizedProduct = [];
+        }
+    
         $sliders = Slider::where('status', '0')->get();
         $trendingProducts = Product::where('trending', '1')->latest()->take(15)->get();
         $newArrivalProducts = Product::latest()->take(14)->get();
@@ -37,7 +44,7 @@ class FrontendController extends Controller
 
         return view('frontend.index', compact('sliders', 'trendingProducts', 'newArrivalProducts', 'featuredProducts', 'personalizedProduct'));
     }
-
+    
     public function searchProducts(Request $request)
     {
         if ($request->search) {
